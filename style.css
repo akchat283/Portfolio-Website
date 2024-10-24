@@ -2,34 +2,34 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
-/* Default Light Mode */
+/* DEFAULT LIGHT MODE */
 :root {
   --primary-color: white;
   --primary-color-2: rgb(250, 250, 250);
   --primary-color-3: rgb(181, 181, 181);
   --background-color: rgb(255, 255, 255);
   --secondary-color: black;
-  --secondary-color-2: rgb(85, 85, 85);
-  --button-background: rgb(53, 53, 53);
+  --secondary-color-2: rgb(85,85,85);
+  --button-background: rgb(53,53,53);
   --button-text-hover: grey;
-  --button-border: rgb(53, 53, 53) 0.1rem solid;
-  --button-border-2: rgb(255, 255, 255) 0.1rem solid;
-  --container-border: rgb(163, 163, 163);
+  --button-border: rgb(53,53,53) 0.1rem solid;
+  --button-border-2: rgb(255,255,255) 0.1rem solid;
+  --container-border: rgb(163,163,163);
 }
 
-/* Dark Mode */
+/* DEFAULT DARK MODE */
 [theme="dark"] {
   --primary-color: black;
   --primary-color-2: rgb(39, 39, 39);
   --primary-color-3: rgb(74, 74, 74);
   --background-color: rgb(33, 33, 33);
   --secondary-color: white;
-  --secondary-color-2: rgb(170, 170, 170);
-  --button-background: rgb(202, 202, 202);
+  --secondary-color-2: rgb(170,170,170);
+  --button-background: rgb(202,202,202);
   --button-text-hover: lightgrey;
-  --button-border: rgb(202, 202, 202) 0.1rem solid;
-  --button-border-2: rgb(0, 0, 0) 0.1rem solid;
-  --container-border: rgb(92, 92, 92);
+  --button-border: rgb(202,202,202) 0.1rem solid;
+  --button-border-2: rgb(0,0,0) 0.1rem solid;
+  --container-border: rgb(92,92,92);
 }
 
 * {
@@ -37,7 +37,7 @@
   padding: 0;
 }
 
-h3 {
+h3{
   color: var(--secondary-color);
 }
 
@@ -80,7 +80,7 @@ nav {
   font-size: 1.5rem;
 }
 
-nav li:last-child {
+nav li:last-child{
   width: max-content;
   display: flex;
   margin: auto;
@@ -214,6 +214,10 @@ section {
   justify-content: center;
   gap: 5rem;
   height: 80vh;
+}
+
+.profile-pic {
+    border-radius: 50%;
 }
 
 .section__pic-container {
@@ -407,22 +411,69 @@ article .icon {
 
 #projects {
   position: relative;
+  text-align: center; /* Center the section text */
 }
 
-.color-container {
-  border-color: var(--container-border);
-  background: var(--primary-color-2);
+.carousel {
+  height: auto; /* Adjust based on your needs */
 }
 
-.project-img {
-  border-radius: 2rem;
-  width: 90%;
-  height: 90%;
+.carousel-item img {
+  height: 400px;
+  width: 100%;
+  object-fit: contain;
+}
+
+.carousel-caption {
+  position: static;
+  padding: 0;
+  text-align: center;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%; /* Adjust as needed */
+  border: none; /* Remove border */
+  background: none; /* Remove background */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(100%);
+  color: var(--primary-color); /* Make the default white arrows black */
+  width: 30px; /* Size of the control icon */
+  height: 30px; /* Size of the control icon */
+}
+
+body[theme="dark"] .carousel-control-prev-icon,
+body[theme="dark"] .carousel-control-next-icon {
+  filter: invert(0%);
+  color: var(--primary-color-2);
+}
+
+.carousel-inner {
+  padding-bottom: 60px; /* Add space at the bottom for indicators */
+}
+
+.carousel-indicators {
+  bottom: 10px; /* Adjust the position to be below the project details */
+}
+
+.carousel-indicators li {
+  background-color: #000; /* Indicator color */
+}
+
+.carousel-indicators .active {
+  background-color: #fff; /* Active indicator color */
 }
 
 .project-title {
-  margin: 1rem;
+  margin-top: 10px; /* Adjust spacing if necessary */
   color: var(--secondary-color);
+}
+
+.btn-container {
+  margin-top: 10px; /* Space between title and buttons */
 }
 
 .project-btn {
@@ -430,6 +481,7 @@ article .icon {
   border-color: var(--container-border);
 }
 
+  
 /* CONTACT */
 
 #contact {
@@ -460,6 +512,7 @@ article .icon {
 
 .contact-info-container p {
   font-size: larger;
+  margin: 0;
 }
 
 .contact-icon {
